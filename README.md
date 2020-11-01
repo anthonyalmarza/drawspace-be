@@ -1,4 +1,6 @@
 ### Access patterns
+
+```
 Create User
 Get User / Bulk Get User: 1
 
@@ -21,3 +23,4 @@ Delete Drawing
 ### GSI2
   Entity       GSI2PK                               GSI2SK
 4 drawing      gsi2pkDrawing#<userId>               gsi2skDrawing#<createDate>
+```
