@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`createUser 1`] = `
+Object {
+  "created": "2020-06-29T00:00:00.000Z",
+  "entity": "user",
+  "id": "1234123412341234",
+  "modified": "2020-06-29T00:00:00.000Z",
+  "name": "mock user name",
+  "privateDrawingCount": 0,
+  "publicDrawingCount": 0,
+}
+`;
+
+exports[`createUser 2`] = `
+Object {
+  "Count": 1,
+  "Items": Array [
+    Object {
+      "_ct": "2020-06-29T00:00:00.000Z",
+      "_et": "user",
+      "_md": "2020-06-29T00:00:00.000Z",
+      "dc": 0,
+      "n": "mock user name",
+      "pdc": 0,
+      "pk": "user#1234123412341234",
+      "sk": "user#1234123412341234",
+    },
+  ],
+  "ScannedCount": 1,
+}
+`;

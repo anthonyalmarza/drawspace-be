@@ -1,0 +1,56 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`getDrawing 1`] = `
+Object {
+  "created": "2020-06-29T00:00:00.000Z",
+  "drawStepsUrl": "mockDrawStepsUrl",
+  "endTime": "mockEndTime",
+  "entity": "drawing",
+  "height": 1000,
+  "id": "4321432143214321",
+  "modified": "2020-06-29T00:00:00.000Z",
+  "resolution": 2,
+  "startTime": "mockStartTime",
+  "thumbnailUrl": "mockThumbnailUrl",
+  "title": "mockTitle",
+  "user": "1234123412341234",
+  "width": 1000,
+}
+`;
+
+exports[`getDrawing 2`] = `
+Object {
+  "Count": 2,
+  "Items": Array [
+    Object {
+      "_ct": "2020-06-29T00:00:00.000Z",
+      "_et": "drawing",
+      "_md": "2020-06-29T00:00:00.000Z",
+      "d": "mockTitle",
+      "dsu": "mockDrawStepsUrl",
+      "et": "mockEndTime",
+      "gsi2pk": "gsi2pkDrawing#1234123412341234",
+      "gsi2sk": "gsi2skDrawing#private#2020-06-29T00:00:00.000Z",
+      "he": 1000,
+      "pk": "drawing#4321432143214321",
+      "r": 2,
+      "sk": "drawing#4321432143214321",
+      "st": "mockStartTime",
+      "tu": "mockThumbnailUrl",
+      "u": "1234123412341234",
+      "wi": 1000,
+    },
+    Object {
+      "_ct": "2020-06-29T00:00:00.000Z",
+      "_et": "user",
+      "_md": "2020-06-29T00:00:00.000Z",
+      "dc": 0,
+      "n": "mock user name",
+      "pdc": 0,
+      "pk": "user#1234123412341234",
+      "sk": "user#1234123412341234",
+    },
+  ],
+  "ScannedCount": 2,
+}
+`;

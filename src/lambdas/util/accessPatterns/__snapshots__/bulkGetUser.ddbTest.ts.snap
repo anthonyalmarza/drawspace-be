@@ -1,0 +1,110 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`bulkGetUser 1`] = `
+Array [
+  Object {
+    "created": "2020-06-29T00:00:00.000Z",
+    "entity": "user",
+    "id": "3",
+    "modified": "2020-06-29T00:00:00.000Z",
+    "name": "mock user name",
+    "privateDrawingCount": 0,
+    "publicDrawingCount": 0,
+  },
+  Object {
+    "created": "2020-06-29T00:00:00.000Z",
+    "entity": "user",
+    "id": "0",
+    "modified": "2020-06-29T00:00:00.000Z",
+    "name": "mock user name",
+    "privateDrawingCount": 0,
+    "publicDrawingCount": 0,
+  },
+  Object {
+    "created": "2020-06-29T00:00:00.000Z",
+    "entity": "user",
+    "id": "2",
+    "modified": "2020-06-29T00:00:00.000Z",
+    "name": "mock user name",
+    "privateDrawingCount": 0,
+    "publicDrawingCount": 0,
+  },
+  Object {
+    "created": "2020-06-29T00:00:00.000Z",
+    "entity": "user",
+    "id": "1",
+    "modified": "2020-06-29T00:00:00.000Z",
+    "name": "mock user name",
+    "privateDrawingCount": 0,
+    "publicDrawingCount": 0,
+  },
+  Object {
+    "created": "2020-06-29T00:00:00.000Z",
+    "entity": "user",
+    "id": "4",
+    "modified": "2020-06-29T00:00:00.000Z",
+    "name": "mock user name",
+    "privateDrawingCount": 0,
+    "publicDrawingCount": 0,
+  },
+]
+`;
+
+exports[`bulkGetUser 2`] = `
+Object {
+  "Count": 5,
+  "Items": Array [
+    Object {
+      "_ct": "2020-06-29T00:00:00.000Z",
+      "_et": "user",
+      "_md": "2020-06-29T00:00:00.000Z",
+      "dc": 0,
+      "n": "mock user name",
+      "pdc": 0,
+      "pk": "user#3",
+      "sk": "user#3",
+    },
+    Object {
+      "_ct": "2020-06-29T00:00:00.000Z",
+      "_et": "user",
+      "_md": "2020-06-29T00:00:00.000Z",
+      "dc": 0,
+      "n": "mock user name",
+      "pdc": 0,
+      "pk": "user#4",
+      "sk": "user#4",
+    },
+    Object {
+      "_ct": "2020-06-29T00:00:00.000Z",
+      "_et": "user",
+      "_md": "2020-06-29T00:00:00.000Z",
+      "dc": 0,
+      "n": "mock user name",
+      "pdc": 0,
+      "pk": "user#2",
+      "sk": "user#2",
+    },
+    Object {
+      "_ct": "2020-06-29T00:00:00.000Z",
+      "_et": "user",
+      "_md": "2020-06-29T00:00:00.000Z",
+      "dc": 0,
+      "n": "mock user name",
+      "pdc": 0,
+      "pk": "user#0",
+      "sk": "user#0",
+    },
+    Object {
+      "_ct": "2020-06-29T00:00:00.000Z",
+      "_et": "user",
+      "_md": "2020-06-29T00:00:00.000Z",
+      "dc": 0,
+      "n": "mock user name",
+      "pdc": 0,
+      "pk": "user#1",
+      "sk": "user#1",
+    },
+  ],
+  "ScannedCount": 5,
+}
+`;

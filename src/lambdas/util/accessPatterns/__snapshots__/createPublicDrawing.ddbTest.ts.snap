@@ -1,0 +1,50 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`createPublicDrawing 1`] = `
+Object {
+  "created": "2020-06-29T00:00:00.000Z",
+  "drawStepsUrl": "mockDrawStepsUrl",
+  "endTime": "mockEndTime",
+  "entity": "drawing",
+  "height": 1000,
+  "id": "mockId",
+  "modified": "2020-06-29T00:00:00.000Z",
+  "published": "2020-06-29T00:00:00.000Z",
+  "resolution": 2,
+  "startTime": "mockStartTime",
+  "thumbnailUrl": "mockThumbnailUrl",
+  "title": "mockTitle",
+  "user": "1234123412341234",
+  "width": 1000,
+}
+`;
+
+exports[`createPublicDrawing 2`] = `
+Object {
+  "Count": 1,
+  "Items": Array [
+    Object {
+      "_ct": "2020-06-29T00:00:00.000Z",
+      "_et": "drawing",
+      "_md": "2020-06-29T00:00:00.000Z",
+      "d": "mockTitle",
+      "dsu": "mockDrawStepsUrl",
+      "et": "mockEndTime",
+      "gsi1pk": "gsi1pkDrawing#2020-06",
+      "gsi1sk": "gsi1skDrawing#2020-06-29T00:00:00.000Z",
+      "gsi2pk": "gsi2pkDrawing#1234123412341234",
+      "gsi2sk": "gsi2skDrawing#public#2020-06-29T00:00:00.000Z",
+      "he": 1000,
+      "p": "2020-06-29T00:00:00.000Z",
+      "pk": "drawing#mockId",
+      "r": 2,
+      "sk": "drawing#mockId",
+      "st": "mockStartTime",
+      "tu": "mockThumbnailUrl",
+      "u": "1234123412341234",
+      "wi": 1000,
+    },
+  ],
+  "ScannedCount": 1,
+}
+`;
