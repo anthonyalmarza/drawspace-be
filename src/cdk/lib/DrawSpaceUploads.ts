@@ -37,12 +37,10 @@ export default class extends Stack {
             Fn.importValue(`${appName}CognitoAuthRoleArn`)
         )
 
-        authRole.addToPrincipalPolicy(
-            new PolicyStatement({
-                effect: Effect.ALLOW,
-                actions: ['cognito-sync:*'],
-                resources: ['*'],
-            })
+        const UnAuthRole = Role.fromRoleArn(
+            this,
+            'UnAuthRole',
+            Fn.importValue(`${appName}CognitoUnauthRoleArn`)
         )
 
         authRole.addToPrincipalPolicy(
@@ -58,11 +56,19 @@ export default class extends Stack {
                 resources: [
                     uploadBucket.arnForObjects(
                         // eslint-disable-next-line no-template-curly-in-string
-                        'private/${cognito-identity.amazonaws.com:sub}/*'
+                        'public/${cognito-identity.amazonaws.com:sub}/*'
                     ),
                 ],
             })
         )
+
+        const publicPolicy = new PolicyStatement({
+            effect: Effect.ALLOW,
+            actions: ['s3:GetObject'],
+            resources: [uploadBucket.arnForObjects('public/*')],
+        })
+        authRole.addToPrincipalPolicy(publicPolicy)
+        UnAuthRole.addToPrincipalPolicy(publicPolicy)
 
         new CfnOutput(this, `${appName}UploadBucket`, {
             value: uploadBucket.bucketArn,

@@ -48,7 +48,7 @@ export interface User {
 
 export interface Drawing {
     id: string
-    description: string
+    title: string
     published: string
     thumbnailUrl: string
     drawStepsUrl: string

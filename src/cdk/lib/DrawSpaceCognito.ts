@@ -155,7 +155,7 @@ export default class extends Stack {
         })
 
         const identityPool = new CfnIdentityPool(this, 'IdentityPool', {
-            allowUnauthenticatedIdentities: false,
+            allowUnauthenticatedIdentities: true,
             cognitoIdentityProviders: [
                 {
                     clientId: userPoolClient.ref,

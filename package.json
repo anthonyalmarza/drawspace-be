@@ -15,7 +15,7 @@
 		"deploy:mediaEncode": "yarn webpackLambdas && ./node_modules/.bin/cdk deploy DrawSpaceMediaEncodeStaging --profile DrawSpaceStagingAdmin",
 		"deploy:restApi": "yarn webpackLambdas && ./node_modules/.bin/cdk deploy DrawSpaceRestApiStaging --profile DrawSpaceStagingAdmin",
 		"deploy:ddb": "./node_modules/.bin/cdk deploy DrawSpaceApiDbStaging --profile DrawSpaceStagingAdmin",
-		"deploy:webHost": "./node_modules/.bin/cdk deploy DrawSpaceWebHostStaging --profile DrawSpaceStagingAdmin"
+		"deploy:webHost": "yarn webpackLambdas && ./node_modules/.bin/cdk deploy DrawSpaceWebHostStaging --profile DrawSpaceStagingAdmin"
 	},
 	"devDependencies": {
 		"@aws-cdk/assert": "1.46.0",
@@ -72,6 +72,7 @@
 		"crypto-secure-random-digit": "^1.0.9",
 		"dayjs": "^1.8.35",
 		"dynamodb-toolbox": "^0.2.0-beta.1",
+		"hasha": "^5.2.2",
 		"jest-date-mock": "^1.0.8",
 		"ksuid": "^1.2.0",
 		"lambda-api": "^0.10.6",

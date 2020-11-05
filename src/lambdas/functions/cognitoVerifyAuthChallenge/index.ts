@@ -9,7 +9,9 @@ const verifyAuthChallengeHandler: VerifyAuthChallengeResponseTriggerHandler = as
         event.request.privateChallengeParameters.secretLoginCode
     if (event.request.challengeAnswer === expectedAnswer) {
         try {
-            const { sub, name } = event.request.userAttributes 
+            const { sub } = event.request.userAttributes
+            const name = event.request.userAttributes['custom:Name']
+            console.log(event.request.userAttributes)
             await createUser({ userId: sub, name })
         } catch (e) {
             if (e.code !== 'ConditionalCheckFailedException') {

@@ -2,7 +2,7 @@ import { API, HandlerFunction } from 'lambda-api'
 import validateRequest from 'lambdas/functions/restApi/middleware/validateRequest'
 import getDrawing from 'lambdas/util/accessPatterns/getDrawing'
 
-const validteUrlParams = validateRequest(
+const validateUrlParams = validateRequest(
     {
         drawingId: { presence: true, type: 'string' },
     },
@@ -16,5 +16,5 @@ const handler: HandlerFunction = async (req, res) => {
 }
 
 export default (api: API): void => {
-    api.get('/drawings/:drawingId', validteUrlParams, handler)
+    api.get('/drawings/:drawingId', validateUrlParams, handler)
 }

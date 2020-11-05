@@ -1,11 +1,14 @@
+import * as hasha from 'hasha'
 import { Stack, Construct, StackProps } from '@aws-cdk/core'
 import {
     CloudFrontWebDistribution,
     OriginAccessIdentity,
     SecurityPolicyProtocol,
     SSLMethod,
+    LambdaEdgeEventType,
 } from '@aws-cdk/aws-cloudfront'
-
+import { RetentionDays } from '@aws-cdk/aws-logs'
+import { Function as LambdaFunction, Code, Runtime } from '@aws-cdk/aws-lambda'
 import { Bucket, BucketAccessControl } from '@aws-cdk/aws-s3'
 import { ARecord, HostedZone, RecordTarget } from '@aws-cdk/aws-route53'
 import { CloudFrontTarget } from '@aws-cdk/aws-route53-targets'
@@ -44,6 +47,20 @@ export default class extends Stack {
 
         bucket.grantRead(s3OriginAccessIdentity)
 
+        // URL rewrite
+        const urlRewriteLambda = new LambdaFunction(this, 'UrlRewriteHandler', {
+            runtime: Runtime.NODEJS_12_X,
+            handler: 'index.default',
+            code: Code.fromAsset('.lambda/cloudfrontUrlRewrite'),
+            logRetention: RetentionDays.ONE_MONTH,
+        })
+
+        const version = urlRewriteLambda.addVersion(
+            `:sha256:${hasha.fromFileSync(
+                '.lambda/cloudfrontUrlRewrite/index.js'
+            )}`
+        )
+
         const distribution = new CloudFrontWebDistribution(
             this,
             'Distribution',
@@ -59,6 +76,13 @@ export default class extends Stack {
                         behaviors: [
                             {
                                 isDefaultBehavior: true,
+                                lambdaFunctionAssociations: [
+                                    {
+                                        eventType:
+                                            LambdaEdgeEventType.ORIGIN_REQUEST,
+                                        lambdaFunction: version,
+                                    },
+                                ],
                             },
                         ],
                         s3OriginSource: {

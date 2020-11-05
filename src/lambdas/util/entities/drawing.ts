@@ -13,7 +13,7 @@ export default new Entity({
             default: ({ pk }) => pk,
         },
 
-        d: { alias: 'title', type: 'string' },
+        t: { alias: 'title', type: 'string' },
         p: { alias: 'published', type: 'string' },
 
         tu: { alias: 'thumbnailUrl', type: 'string' },

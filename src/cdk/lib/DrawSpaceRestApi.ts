@@ -45,6 +45,8 @@ export default class extends Stack {
             runtime: Runtime.NODEJS_12_X,
             handler: 'index.default',
             code: Code.fromAsset('.lambda/restApi'),
+            memorySize: 768,
+            // memorySize: 1024,
             logRetention: RetentionDays.ONE_MONTH,
         })
 
