@@ -23,6 +23,7 @@ export default class extends Stack {
                         HttpMethods.PUT,
                         HttpMethods.DELETE,
                         HttpMethods.HEAD,
+                        HttpMethods.GET,
                     ],
                     allowedOrigins,
                     maxAge: 3000,
