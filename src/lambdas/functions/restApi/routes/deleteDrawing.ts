@@ -3,7 +3,7 @@ import validateRequest from 'lambdas/functions/restApi/middleware/validateReques
 import deleteDrawing from 'lambdas/util/accessPatterns/deleteDrawing'
 import cognitoAuth from 'lambdas/functions/restApi/middleware/cognitoAuth'
 
-const validteUrlParams = validateRequest(
+const validateUrlParams = validateRequest(
     {
         drawingId: { presence: true, type: 'string' },
     },
@@ -18,5 +18,5 @@ const handler: HandlerFunction = async (req, res) => {
 }
 
 export default (api: API): void => {
-    api.delete('/drawings/:drawingId', cognitoAuth, validteUrlParams, handler)
+    api.delete('/drawings/:drawingId', cognitoAuth, validateUrlParams, handler)
 }
