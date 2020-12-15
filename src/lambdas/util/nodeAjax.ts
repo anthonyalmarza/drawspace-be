@@ -5,14 +5,14 @@ import { parse } from 'url'
 import { stringify } from 'querystring'
 import { AjaxParams } from 'types'
 
-export default ({
+export default <TRes>({
     url,
     method,
     body,
     queryParams,
     headers = {},
     ssl = true,
-}: AjaxParams): Promise<Record<string, unknown>> =>
+}: AjaxParams): Promise<TRes> =>
     new Promise((resolve, reject) => {
         const queryString = queryParams ? `?${stringify(queryParams)}` : ''
         const jsonBody = is(Object, body) ? JSON.stringify(body) : body
